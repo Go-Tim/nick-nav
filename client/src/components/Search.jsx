@@ -25,10 +25,10 @@ const Search = () => {
   // Axios request to the locations and camps database with a delay to account for search time
   let onChange = (term) => {
     if (term.length !== 0) {
-      axios.get(`/api/search/locations/${term}`)
+      axios.get(`/nav/search/locations/${term}`)
         .then(results => setLocations(results.data))
         .then(() => {
-          axios.get(`/api/search/camps/${term}`)
+          axios.get(`/nav/search/camps/${term}`)
             .then(results => setCamps(results.data));
         });
     }
